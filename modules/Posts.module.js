@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Joi from "Joi";
+import Joi from "joi";
 
 const joiPostSchema = Joi.object({
     featuredImage: Joi.string().required().label("Image url"),
