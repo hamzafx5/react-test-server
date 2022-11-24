@@ -9,7 +9,7 @@ import cookieParser from "cookie-parser";
 import api from "./api/index.js";
 import notFound from "./middleware/notFound.js";
 import serverError from "./middleware/serverError.js";
-import NormalizeReqBody from "./middleware/NormalizeReqBody.js";
+import normalizeReqBody from "./middleware/normalizeReqBody.js";
 const app = express();
 
 app.use(morgan("dev"));
@@ -22,7 +22,7 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-app.use(NormalizeReqBody);
+app.use(normalizeReqBody);
 // Connect to the mongoDB Database
 await connect();
 

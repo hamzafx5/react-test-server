@@ -1,4 +1,4 @@
-export default function (req, res, next) {
+export default function normalizeReqBody(req, res, next) {
     const isReqBodyEmpty = Object.keys(req.body).length === 0;
     const hasDataProperty = req.body.hasOwnProperty("data");
     if (!isReqBodyEmpty && hasDataProperty) {
