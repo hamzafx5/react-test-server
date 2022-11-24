@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Joi from "Joi";
+import Joi from "joi";
 const joiUserSchema = Joi.object({
     fullName: Joi.string().min(3).max(30).required().label("Full Name"),
     email: Joi.string().email().required().label("Email"),
