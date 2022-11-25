@@ -55,6 +55,7 @@ router.post("/login", async (req, res) => {
             expires: new Date(Date.now() + 8640000),
             secure: false,
             sameSite: "strict",
+            domain: "localhost",
         })
         .json({
             ok: true,
