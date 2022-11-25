@@ -52,10 +52,8 @@ router.post("/login", async (req, res) => {
     res.status(201)
         .cookie("accessToken", token, {
             httpOnly: true,
-            expires: new Date(Date.now() + 8640000),
+            expires: new Date(Date.now() + 8640000 * 7),
             secure: false,
-            sameSite: "strict",
-            domain: "localhost",
         })
         .json({
             ok: true,
