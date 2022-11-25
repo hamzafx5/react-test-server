@@ -49,17 +49,11 @@ router.post("/login", async (req, res) => {
     };
 
     const token = genToken(userInfo);
-    res.status(201)
-        .cookie("accessToken", token, {
-            httpOnly: true,
-            expires: new Date(Date.now() + 8640000 * 7),
-            secure: false,
-        })
-        .json({
-            ok: true,
-            message: "Logged in successfully",
-            user: userInfo,
-        });
+    res.status(201).json({
+        ok: true,
+        message: "Logged in successfully",
+        user: { ...userInfo, token },
+    });
 });
 
 export default router;

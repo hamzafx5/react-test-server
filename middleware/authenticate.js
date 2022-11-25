@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 const TOKEN_SECRET_KEY = process.env.TOKEN_SECRET_KEY;
 
 export default function auth(req, res, next) {
-    const token = req.cookies.accessToken;
+    const token = req.header("Authorization");
     if (token) {
         jwt.verify(token, TOKEN_SECRET_KEY, (err, user) => {
             if (err) {
